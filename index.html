@@ -1,0 +1,96 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title> SOKOL BEER </title> 
+
+<script type="text/javascript" src="swfobject.js"></script>
+
+<style type="text/css">
+
+	/* hide from ie on mac \*/
+	html {
+		height: 100%;
+
+	}
+
+	#flashcontent {
+		height: 100%;
+	}
+	/* end hide */
+
+	body {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		background-color: #000000;
+	}
+
+</style>
+<SCRIPT LANGUAGE="JavaScript">
+
+function setSize () {
+
+	flashobj=document.getElementById('sotester');
+	var height, width;
+	if (self.innerHeight) {
+	    height = self.innerHeight;
+
+	    if (height<560)
+
+	    width = document.body.offsetWidth+20;
+
+	    else
+
+	    width =  self.innerWidth;
+
+	} else
+
+	if (document.documentElement && document.documentElement.clientHeight) {
+
+	    width = document.documentElement.clientWidth;
+	    height = document.documentElement.clientHeight;
+
+	} else if (document.body) {
+
+	    width = document.body.clientWidth;
+	    height = document.body.clientHeight;
+	}
+
+	widthp=width
+	heightp=height;
+
+	if (height<560)
+	{
+	     heightp=560;
+	}
+	flashobj.style.height=heightp +'px';
+
+}
+
+</SCRIPT>
+</head>
+<body onLoad=setSize() onResize=setSize();>
+
+
+
+	<div align="center" id="flashcontent">This site requires Adobe Flash Player 9 or the latest.
+	<br/><br/>
+	<!--<a href="http://get.adobe.com/flashplayer/"><img src="getflashplayer.jpg" border="0"/></a>-->
+	</div>
+
+	<script type="text/javascript">
+
+		var so = new SWFObject("index.swf", "sotester", "100%", "100%", "9", "0");
+
+		so.addParam("scale", "noscale");
+		so.addParam("salign", "ct");
+		so.addParam("bgcolor", "#000000");
+		so.addParam("allowFullScreen", "true");
+		so.write("flashcontent");
+		//document.getElementById('sotester').focus();
+
+	</script>
+
+</body>
+</html>
